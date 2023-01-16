@@ -37,7 +37,7 @@ following structure:
 
 In other words, the workflow code goes into a subfolder ``workflow``, while the configuration is stored in a subfolder ``config``.
 Inside of the ``workflow`` subfolder, the central ``Snakefile`` marks the entrypoint of the workflow (it will be automatically discovered when running snakemake from the root of above structure.
-This main structure and the recommendations below are implemented in `this Snakemake workflow template <https://github.com/snakemake-workflows/snakemake-workflow-template>`_ that you can use to `create your own workflow repository with a single click on "Use this template" <https://github.com/snakemake-workflows/snakemake-workflow-template/generate>_.
+This main structure and the recommendations below are implemented in `this Snakemake workflow template <https://github.com/snakemake-workflows/snakemake-workflow-template>`_ that you can use to `create your own workflow repository with a single click on "Use this template" <https://github.com/snakemake-workflows/snakemake-workflow-template/generate>`_.
 In addition to the central ``Snakefile``, rules can be stored in a modular way, using the optional subfolder ``workflow/rules``.
 Such modules should end with ``.smk``, the recommended file extension of Snakemake.
 Further, :ref:`scripts <snakefiles-external_scripts>` should be stored in a subfolder ``workflow/scripts`` and notebooks in a subfolder ``workflow/notebooks``.
@@ -183,7 +183,7 @@ Above, several things have changed.
 Uploading workflows to WorkflowHub
 ----------------------------------
 
-In order to share a workflow with the scientific community it is advised to upload the repository to `WorkflowHub <https://workflowhub.eu/>`_, where each submission will be automatically parsed and encapsulated into a `Research Object Crate <https://w3id.org/ro/crate>`_. That way a *snakemake* workflow is annotated with proper metatada and thus complies with the `FAIR <https://en.wikipedia.org/wiki/FAIR_data>`_ principles of scientific data.
+In order to share a workflow with the scientific community it is advised to upload the repository to `WorkflowHub <https://workflowhub.eu/>`_, where each submission will be automatically parsed and encapsulated into a `Research Object Crate <https://w3id.org/ro/crate>`_. That way a *snakemake* workflow is annotated with proper metadata and thus complies with the `FAIR <https://en.wikipedia.org/wiki/FAIR_data>`_ principles of scientific data.
 
 To adhere to the high WorkflowHub standards of scientific workflows the recommended *snakemake* repository structure presented above needs to be extended by the following elements:
 

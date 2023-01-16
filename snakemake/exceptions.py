@@ -23,9 +23,9 @@ def format_error(
 
     location = ""
     if lineno and snakefile:
-        location = f"in line {lineno} of {snakefile}"
+        location = f" in file {snakefile}, line {lineno}"
         if rule:
-            location = f" in rule {rule} {location}"
+            location = f" in rule {rule}{location}"
 
     tb = ""
     if show_traceback:
@@ -292,9 +292,9 @@ class MissingOutputException(RuleException):
         rule=None,
         jobid="",
     ):
-        message = "Job {} completed successfully, but some output files are missing. {}".format(
-            message, jobid
-        )
+        if jobid:
+            jobid = f"{jobid} "
+        message = f"Job {jobid} completed successfully, but some output files are missing. {message}"
         super().__init__(message, include, lineno, snakefile, rule)
 
 
@@ -568,3 +568,9 @@ class ResourceScopesException(Exception):
         super().__init__(msg, invalid_resources)
         self.msg = msg
         self.invalid_resources = invalid_resources
+
+
+class CliException(Exception):
+    def __init__(self, msg):
+        super().__init__(msg)
+        self.msg = msg

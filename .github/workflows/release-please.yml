@@ -36,14 +36,14 @@ jobs:
 
       - name: Publish to PyPI
         if: ${{ steps.release.outputs.release_created }}
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
           password: ${{ secrets.PYPI_TOKEN }}
 
       - name: Publish to Registry
         if: ${{ steps.release.outputs.release_created }}
-        uses: elgohr/Publish-Docker-Github-Action@v4
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: snakemake/snakemake
           username: ${{ secrets.DOCKER_USERNAME }}
